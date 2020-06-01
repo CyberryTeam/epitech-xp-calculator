@@ -43,3 +43,8 @@ The list of environment variables you can use:
 
 - `AUTO_LOGIN` is where you have to add your auto login link
 - `START_DATE` is by default 2020-01-01 but you can put another date in the format: `yyyy-mm-dd`
+
+## Contributors
+
+- Special thanks to @Madfish who add the support of activities organization in the counting of XP's.
+
