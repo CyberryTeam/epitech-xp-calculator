@@ -35,11 +35,11 @@ To use it with docker you have three different tags:
 
 Once you choose your corresponding image you can run the docker with following command:
 
-`docker run --rm -e AUTO_LOGIN='your-autologin-link' colcolty/epi-xp-calculator:the_tag_choosen`
+`docker run --rm -e AUTO_LOGIN='your-autologin-link' colcolt/epi-xp-calculator:the_tag_choosen`
 
 ## Environment varaibles
 
 The list of environment variables you can use:
 
-`AUTO_LOGIN` is where you have to add your auto login link
-`START_DATE` is by default 2020-01-01 but you can put another date in the format: `yyyy-mm-dd`
+- `AUTO_LOGIN` is where you have to add your auto login link
+- `START_DATE` is by default 2020-01-01 but you can put another date in the format: `yyyy-mm-dd`
