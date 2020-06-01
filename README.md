@@ -35,7 +35,7 @@ To use it with docker you have three different tags:
 
 Once you choose your corresponding image you can run the docker with following command:
 
-`docker run --rm -e AUTO_LOGIN='your-autologin-link' colcolty/epi-xp-calculator:the_tag_choosen`
+`docker run --rm -e AUTO_LOGIN='your-autologin-link' colcolt/epi-xp-calculator:the_tag_choosen`
 
 ## Environment varaibles
 
