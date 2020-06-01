@@ -32,6 +32,12 @@ async function main(auth) {
     }
 
     activities.forEach(el => {
+        if (el.type_title === "Experience" && el.acti_title.toLowerCase().includes("semaine du hub")) {
+            console.log(el.acti_title);
+            console.log("Realized the: ", el.start);
+            console.log("Gives you: ", 0, "-> because the experiences in the \"Semaine du hub\" aren't counted");
+            return;
+        }
         if (numberType[el.type_title] >= maxType[el.type_title]) {
             console.log("Over the limit for: ", el.type_title, "->", el.acti_title);
             numberType[el.type_title]++;
