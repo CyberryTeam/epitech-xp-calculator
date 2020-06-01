@@ -29,11 +29,12 @@ Wait a few seconds for the API to get all the classes and it will show you the l
 
 To use it with docker you have three different tags:
 
-`tek1` it corresponds to the start date of the Tek1
-`tek2` it corresponds to the start date of the Tek2
-`tek3` it corresponds to the start date of the Tek3
+- `tek1` it corresponds to the start date of the Tek1
+- `tek2` it corresponds to the start date of the Tek2
+- `tek3` it corresponds to the start date of the Tek3
 
 Once you choose your corresponding image you can run the docker with following command:
+
 `docker run --rm -e AUTO_LOGIN='your-autologin-link' colcolty/epi-xp-calculator:the_tag_choosen`
 
 ## Environment varaibles
