@@ -38,7 +38,7 @@ async function main(auth) {
     await login();
     const email = await getEmail();
 
-    let start = new Date(process.env.START_DATE || "2020-01-01");
+    let start = new Date(process.env.START_DATE || "2020-01-01");
     let today = new Date();
     const activities = await getEvents(start.toISOString().split('T')[0], today.toISOString().split('T')[0], email);
 

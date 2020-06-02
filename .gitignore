@@ -1,2 +1,8 @@
+# Node
 node_modules
-.idea
+
+# Jetbrains
+.idea/
+
+# Visual Studio Code
+.vscode/
