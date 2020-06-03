@@ -41,7 +41,7 @@ async function getEvents(start, end, email) {
     const activities = await getActivities(start, end);
     const my_activities = activities.filter(el => {
 
-        if (el.events[0].user_status === "present" || el.events[0].user_status === "absent") {
+        if (el.events[0].user_status === "present" || el.events[0].user_status === "absent") {
             return true;
         } else {
             if (el.events[0].assistants.filter(assistant => assistant.login === email.login).length)
