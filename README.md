@@ -1,4 +1,4 @@
-# epi-xp-calculator
+# epitech-xp-calculator
 
 This program help the students of Epitech to know how many XP they have acquired on their year at Epitech.
 The XP is needed to validate a module of discovery and experimentation outside of the classes at Epitech.
