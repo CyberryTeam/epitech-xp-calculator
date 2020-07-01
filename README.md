@@ -99,14 +99,18 @@ Replace `<tag>` by one of the following:
 - `tek2`: Start date for Tek2
 - `tek3`: Start date for Tek3
 
+**Note**: You can also define the start date by setting the `START_DATE` variable via the `-e` option with a value of format `yyyy-mm-dd`.
+
 ### Node.js
 
-- Set `AUTO_LOGIN` variable of the `.env` file to your auto-login link.
+- Set `AUTO_LOGIN` variable in the `.env` file to your auto-login link.
 - Start the program:
 
 ```shell script
 npm start
 ```
+
+**Note**: You can also define the start date by setting the `START_DATE` variable in the `.env` file with a value of format `yyyy-mm-dd`.
 
 ## Contributing
 
