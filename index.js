@@ -34,7 +34,7 @@ const maxOrganization = {
     Hackathon: 999
 }
 
-async function main(auth) {
+async function main() {
     await login();
     const email = await getEmail();
 
