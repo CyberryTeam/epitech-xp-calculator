@@ -1,0 +1,50 @@
+name: Docker
+
+on:
+  push:
+    branches: [master]
+
+env:
+  DOCKER_IMAGE_USER: cyberryteam
+  DOCKER_IMAGE_NAME: epitech-xp-calculator
+
+jobs:
+
+  docker:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: azure/docker-login@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Get version
+        id: version
+        run: |
+          VERSION="$(grep '"version"' package.json | cut -d '"' -f 4)"
+          MAJOR="$(echo $VERSION | grep -oP '^\d+')"
+          MINOR="$(echo $VERSION | grep -oP '^\d+.\d+')"
+          echo "::set-output name=version::$VERSION"
+          echo "::set-output name=major::$MAJOR"
+          echo "::set-output name=minor::$MINOR"
+
+      - name: Build
+        run: |
+          docker build . \
+            -t $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:latest \
+            -t $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:${{ steps.version.outputs.major }} \
+            -t $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:${{ steps.version.outputs.minor }} \
+            -t $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:${{ steps.version.outputs.version }} \
+            --build-arg IMAGE_CREATION=$(date --iso-8601=seconds) \
+            --build-arg IMAGE_VERSION=${{ steps.version.outputs.version }}
+
+      - name: Test
+        run: |
+          docker run --rm -v "$PWD:/files" $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:${{ steps.version.outputs.version }}
+
+      - name: Push
+        run: |
+          docker push $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME
