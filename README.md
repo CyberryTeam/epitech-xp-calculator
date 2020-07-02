@@ -88,7 +88,7 @@ npm run lint
 ### Docker
 
 ```shell script
-docker run --rm -e AUTO_LOGIN=<auto-login> colcolt/epi-xp-calculator:<tag>
+docker run --rm -e AUTO_LOGIN=<auto-login> cyberryteam/epitech-xp-calculator:<tag>
 ```
 
 Replace `<auto-login>` by your auto-login link.

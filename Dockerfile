@@ -1,11 +1,24 @@
-FROM node:13.8.0-alpine3.11
+FROM node:14.5.0-alpine3.12
 
-WORKDIR /app
+ARG IMAGE_CREATION
+ARG IMAGE_VERSION
 
-COPY package*.json /app/
+LABEL fr.cyberry.image.created=${IMAGE_CREATION}
+LABEL fr.cyberry.image.authors="Cyberry Team <team@cyberry.fr> (@CyberryTeam)"
+LABEL fr.cyberry.image.url="https://hub.docker.com/r/cyberryteam/epitech-xp-calculator"
+LABEL fr.cyberry.image.source="https://github.com/CyberryTeam/epitech-xp-calculator"
+LABEL fr.cyberry.image.version=${IMAGE_VERSION}
+LABEL fr.cyberry.image.vendor="Cyberry"
+LABEL fr.cyberry.image.licenses="MIT"
+LABEL fr.cyberry.image.title="Epitech XP calculator"
+LABEL fr.cyberry.image.description="Epitech XP calculator for the Hub module"
 
-RUN npm install --silent
+ENV APP_DIRECTORY="/usr/src/app"
+
+WORKDIR ${APP_DIRECTORY}
 
 COPY . .
 
-CMD [ "node", "index.js" ]
+RUN npm install --production
+
+CMD [ "npm", "start" ]

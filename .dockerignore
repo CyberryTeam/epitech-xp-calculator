@@ -1,0 +1,9 @@
+# Ignore all
+**
+
+# Whitelist
+!src/
+!.env
+!index.js
+!package.json
+!package-lock.json
