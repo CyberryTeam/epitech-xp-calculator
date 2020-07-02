@@ -1,6 +1,6 @@
 {
   "name": "epitech-xp-calculator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Epitech XP calculator for the Hub module",
   "main": "index.js",
   "scripts": {
