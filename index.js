@@ -5,36 +5,36 @@ dotenv.config();
 const participationXP = {
     Talk: 1,
     Workshop: 3,
-    Hackaton: 6,
+    Hackathon: 6,
     Experience: 3
 }
 
 const organizationXPPresent = {
     Talk: 4,
     Workshop: 10,
-    Hackaton: 15
+    Hackathon: 15
 }
 
 const organizationXPAbsent = {
     Talk: 6,
     Workshop: 15,
-    Hackaton: 20
+    Hackathon: 20
 }
 
 const maxParticipation = {
     Talk: 15,
     Workshop: 10,
-    Hackaton: 15,
+    Hackathon: 15,
     Experience: 10
 }
 
 const maxOrganization = {
     Talk: 6,
     Workshop: 3,
-    Hackaton: 999
+    Hackathon: 999
 }
 
-async function main(auth) {
+async function main() {
     await login();
     const email = await getEmail();
 
@@ -46,13 +46,13 @@ async function main(auth) {
     let numberParticipation = {
         Talk: 0,
         Workshop: 0,
-        Hackaton: 0,
+        Hackathon: 0,
         Experience: 0
     }
     let numberOrganization = {
         Talk: 0,
         Workshop: 0,
-        Hackaton: 0
+        Hackathon: 0
     }
 
     activities.forEach(el => {
@@ -96,12 +96,12 @@ async function main(auth) {
     console.log("\nCounting the surpluses, you participated in:\n");
     console.log(`HubTalks: ${numberParticipation["Talk"]}/${maxParticipation["Talk"]}`);
     console.log(`Workshops: ${numberParticipation["Workshop"]}/${maxParticipation["Workshop"]}`);
-    console.log(`Hackatons: ${numberParticipation["Hackaton"]}/${maxParticipation["Hackaton"]}`);
+    console.log(`Hackathons: ${numberParticipation["Hackathon"]}/${maxParticipation["Hackathon"]}`);
     console.log(`Experiences: ${numberParticipation["Experience"]}/${maxParticipation["Experience"]}`);
     console.log("\nAnd counting the surpluses, you organized :\n");
     console.log(`HubTalks: ${numberOrganization["Talk"]}/${maxOrganization["Talk"]}`);
     console.log(`Workshops: ${numberOrganization["Workshop"]}/${maxOrganization["Workshop"]}`);
-    console.log(`Hackatons: ${numberOrganization["Hackaton"]}/${maxOrganization["Hackaton"]}`);
+    console.log(`Hackathons: ${numberOrganization["Hackathon"]}/${maxOrganization["Hackathon"]}`);
 }
 
 main();

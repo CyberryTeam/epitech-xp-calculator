@@ -1,6 +1,9 @@
 # Node
 node_modules
 
+# Run configurations
+.run/
+
 # Jetbrains
 .idea/
 
