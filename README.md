@@ -1,50 +1,125 @@
-# epi-xp-calculator
+# epitech-xp-calculator
 
-This program help the students of Epitech to know how many XP they have acquired on their year at Epitech.
-The XP is needed to validate a module of discovery and experimentation outside of the classes at Epitech.
+Epitech XP calculator for the Hub module
 
-## How to use
+## Table of Contents
 
-First of all you will need an autologin link, this can be acquired in the Epitech Intranet:
+- [About](#about)
+  - [Built with](#built-with)
+- [Getting started](#getting-started)
+  - [Using Docker](#using-docker)
+    - [Prerequisites](#prerequisites)
+  - [Using Node.js](#using-nodejs)
+    - [Prerequisites](#prerequisites-1)
+    - [Installation](#installation)
+- [Developing](#developing)
+- [Testing](#testing)
+- [Using](#using)
+  - [Docker](#docker)
+  - [Node.js](#nodejs)
+- [Contributing](#contributing)
+- [License](#license)
 
-Once your connected to the intranet you must follow the following steps:
+## About
 
-- Go to the Administration part, the fifth icon next to the E-Learning icon
-- Then in the list of options select: [Generate auto login link](https://intra.epitech.eu/admin/autolog)
-- Copy the link showed in the screen and keep it for the next steps.
+This program allows Epitech students to know how many XPs they have acquired during their year at Epitech. The XP is necessary to validate a module of discovery and experimentation outside of the courses at Epitech.
 
-Once you have your autologin link, in the `.env` file, next to the variable: `AUTO_LOGIN` paste the link you copied previously.
+### Built with
 
-Save the file an then install all the needed dependencies with:
+- [Docker](https://www.docker.com/)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [fetch-cookie](https://www.npmjs.com/package/fetch-cookie)
+- [node-fetch](https://www.npmjs.com/package/node-fetch)
 
-`npm install`
+## Getting started
 
-And run the app with:
+### Using Docker
 
-`node index.js`
+#### Prerequisites
 
-Wait a few seconds for the API to get all the classes and it will show you the list number of credits and the number of activities you do for each activity type.
+1. [Install Docker](https://docs.docker.com/get-docker/)
 
-## Use it with Docker
+### Using Node.js
 
-To use it with docker you have three different tags:
+#### Prerequisites
 
-- `tek1` it corresponds to the start date of the Tek1
-- `tek2` it corresponds to the start date of the Tek2
-- `tek3` it corresponds to the start date of the Tek3
+1. [Install Node.js](https://nodejs.org/en/download/package-manager/)
 
-Once you choose your corresponding image you can run the docker with following command:
+#### Installation
 
-`docker run --rm -e AUTO_LOGIN='your-autologin-link' colcolt/epi-xp-calculator:the_tag_choosen`
+1. Clone the repository:
 
-## Environment varaibles
+```shell script
+git clone https://github.com/CyberryTeam/epitech-xp-calculator.git
+cd epitech-xp-calculator
+```
 
-The list of environment variables you can use:
+2. Install Node.js packages:
 
-- `AUTO_LOGIN` is where you have to add your auto login link
-- `START_DATE` is by default 2020-01-01 but you can put another date in the format: `yyyy-mm-dd`
+```shell script
+npm install --production
+```
 
-## Contributors
+## Developing
 
-- Special thanks to @Madfish who add the support of activities organization in the counting of XP's.
+```shell script
+git clone https://github.com/CyberryTeam/epitech-xp-calculator.git
+cd epitech-xp-calculator
+```
 
+2. Install Node.js packages:
+
+```shell script
+npm install
+```
+
+## Testing
+
+Run coding style tests:
+
+```shell script
+npm run lint
+```
+
+## Using
+
+- Generate and retrieve [your auto-login link](https://intra.epitech.eu/admin/autolog).
+
+### Docker
+
+```shell script
+docker run --rm -e AUTO_LOGIN=<auto-login> colcolt/epi-xp-calculator:<tag>
+```
+
+Replace `<auto-login>` by your auto-login link.
+
+Replace `<tag>` by one of the following:
+
+- `tek1`: Start date for Tek1
+- `tek2`: Start date for Tek2
+- `tek3`: Start date for Tek3
+
+**Note**: You can also define the start date by setting the `START_DATE` variable via the `-e` option with a value of format `yyyy-mm-dd`.
+
+### Node.js
+
+- Set `AUTO_LOGIN` variable in the `.env` file to your auto-login link.
+- Start the program:
+
+```shell script
+npm start
+```
+
+**Note**: You can also define the start date by setting the `START_DATE` variable in the `.env` file with a value of format `yyyy-mm-dd`.
+
+## Contributing
+
+Bug reports, feature requests, other issues and pull requests are welcome.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information.
+
+Special thanks to [Madfish5415](https://github.com/Madfish5415) for the activities organization support in XPs counting.
+
+## License
+
+Distributed under the [MIT](https://spdx.org/licenses/MIT.html) License.
+See [`LICENSE`](LICENSE) for more information.
