@@ -1,4 +1,4 @@
-name: Docker
+name: Push
 
 on:
   push:
@@ -40,10 +40,6 @@ jobs:
             -t $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:${{ steps.version.outputs.version }} \
             --build-arg IMAGE_CREATION=$(date --iso-8601=seconds) \
             --build-arg IMAGE_VERSION=${{ steps.version.outputs.version }}
-
-      - name: Test
-        run: |
-          docker run --rm -v "$PWD:/files" $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:${{ steps.version.outputs.version }}
 
       - name: Push
         run: |
