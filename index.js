@@ -4,28 +4,28 @@ dotenv.config();
 
 const participationXP = {
     Talk: 1,
-    Workshop: 3,
+    Workshop: 2,
     Hackathon: 6,
     Experience: 3
 }
 
 const organizationXPPresent = {
     Talk: 4,
-    Workshop: 10,
+    Workshop: 7,
     Hackathon: 15
 }
 
 const organizationXPAbsent = {
     Talk: 6,
-    Workshop: 15,
+    Workshop: 10,
     Hackathon: 20
 }
 
 const maxParticipation = {
     Talk: 15,
     Workshop: 10,
-    Hackathon: 15,
-    Experience: 10
+    Hackathon: 999,
+    Experience: 8
 }
 
 const maxOrganization = {
