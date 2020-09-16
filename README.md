@@ -12,8 +12,6 @@ Epitech XP calculator for the Hub module
   - [Using Node.js](#using-nodejs)
     - [Prerequisites](#prerequisites-1)
     - [Installation](#installation)
-- [Developing](#developing)
-- [Testing](#testing)
 - [Using](#using)
   - [Docker](#docker)
   - [Node.js](#nodejs)
@@ -60,27 +58,6 @@ cd epitech-xp-calculator
 npm install --production
 ```
 
-## Developing
-
-```shell script
-git clone https://github.com/CyberryTeam/epitech-xp-calculator.git
-cd epitech-xp-calculator
-```
-
-2. Install Node.js packages:
-
-```shell script
-npm install
-```
-
-## Testing
-
-Run coding style tests:
-
-```shell script
-npm run lint
-```
-
 ## Using
 
 - Generate and retrieve [your auto-login link](https://intra.epitech.eu/admin/autolog).
@@ -117,7 +94,8 @@ npm start
 Bug reports, feature requests, other issues and pull requests are welcome.
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information.
 
-Special thanks to [Madfish5415](https://github.com/Madfish5415) for the activities organization support in XPs counting.
+**Special thanks:**
+- [Madfish5415](https://github.com/Madfish5415): Organization support in XPs counting
 
 ## License
 
