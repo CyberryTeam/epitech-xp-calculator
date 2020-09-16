@@ -92,7 +92,7 @@ npm start
 ## Contributing
 
 Bug reports, feature requests, other issues and pull requests are welcome.
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 **Special thanks:**
 - [Madfish5415](https://github.com/Madfish5415): Organization support in XPs counting
@@ -100,4 +100,4 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information.
 ## License
 
 Distributed under the [MIT](https://spdx.org/licenses/MIT.html) License.
-See [`LICENSE`](LICENSE) for more information.
+See [LICENSE](LICENSE) for more information.
