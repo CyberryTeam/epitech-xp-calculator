@@ -2,7 +2,7 @@ name: Push
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
 
 env:
   DOCKER_IMAGE_USER: cyberryteam
@@ -12,7 +12,7 @@ jobs:
 
   docker:
     name: Docker
-    runs-on: [ubuntu-latest]
+    runs-on: [ ubuntu-latest ]
 
     steps:
       - uses: actions/checkout@v2
