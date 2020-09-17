@@ -19,3 +19,49 @@ jobs:
         run: |
           docker build . \
             -t $DOCKER_IMAGE_USER/$DOCKER_IMAGE_NAME:latest
+
+  node:
+    name: Node
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm
+          path: |
+            ~/.npm
+            **/node_modules
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Lint
+        run: |
+          npm run lint
+
+  super-linter:
+    name: Super-Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Lint
+        uses: github/super-linter@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_EXCLUDE: .*.github/.*
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_MD: true
