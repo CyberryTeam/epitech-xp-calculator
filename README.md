@@ -65,16 +65,10 @@ npm install --production
 ### Docker
 
 ```shell script
-docker run --rm -e AUTO_LOGIN=<auto-login> cyberryteam/epitech-xp-calculator:<tag>
+docker run --rm -e AUTO_LOGIN=<auto-login> cyberryteam/epitech-xp-calculator
 ```
 
 Replace `<auto-login>` by your auto-login link.
-
-Replace `<tag>` by one of the following:
-
-- `tek1`: Start date for Tek1
-- `tek2`: Start date for Tek2
-- `tek3`: Start date for Tek3
 
 **Note**: You can also define the start date by setting the `START_DATE` variable via the `-e` option with a value of format `yyyy-mm-dd`.
 
